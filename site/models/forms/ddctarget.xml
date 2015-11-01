@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="default_left">
+		<field
+			name="state"
+			type="text"
+			default="1"
+			class="hidden"
+			hidden="true"
+		/>
+		<field
+			name="table"
+			type="text"
+			class="hidden"
+			default="ddctargets"
+			hidden="true"
+			 />
+		<field
+			name="ddcbi_target_id"
+			type="text"
+			class="hidden"
+			hidden="true"
+			 />
+	</fieldset>
+	<fieldset name="default_date">
+		<field
+			name="target_date"
+			type="calendar"
+			label="COM_DDC_TARGET_DATE"
+			class="span12"
+			format="%d-%m-%Y"
+		/>
+	</fieldset>
+</form>

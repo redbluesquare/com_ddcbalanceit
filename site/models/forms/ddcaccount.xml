@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="default_left">
+		<field
+			name="ddcbi_account_id"
+			type="readonly"
+			label="COM_DDC_ID"
+			description="COM_DDC_ID_DESC"
+			readonly="true"
+		/>
+		<field
+			name="account_name"
+			type="text"
+			label="COM_DDC_ACCOUNT_NAME"
+			description="COM_DDC_ACCOUNT_NAME_DESC"
+		/>
+		<field
+			name="alias"
+			type="text"
+			label="COM_DDC_ALIAS"
+			description="COM_DDC_ALIAS_DESC"
+		/>
+		<field
+			name="account_type"
+			type="sql"
+			default=""
+			label="COM_DDC_ACCOUNT_TYPE"
+			description="COM_DDC_ACCOUNT_TYPE_DESC"
+			query="SELECT ddcbi_account_type_id AS value, account_type FROM #__ddcbi_account_types"
+		/>
+	</fieldset>
+	<fieldset name="default_right">
+		<field
+			name="account_number"
+			type="text"
+			label="COM_DDC_ACCOUNT_NUMBER"
+			description="COM_DDC_ACCOUNT_NUMBER_DESC"
+		/>
+		<field
+			name="sort_code"
+			type="text"
+			label="COM_DDC_SORT_CODE"
+			description="COM_DDC_SORT_CODE_DESC"
+		/>
+		<field
+			name="interest_rate"
+			type="text"
+			default="0.00"
+			label="COM_DDC_INTEREST_RATE"
+			description="COM_DDC_INTEREST_RATE_DESC"
+		/>
+		<field
+			name="state"
+			type="hidden"
+			class="hidden"
+			hidden="true"
+		/>
+		<field
+			name="table"
+			type="hidden"
+			class="hidden"
+			default="ddcaccounts"
+			hidden="true"
+			 />
+	</fieldset>
+</form>

@@ -16,12 +16,14 @@ class DdcbalanceitViewsDashboardHtml extends JViewHtml
   {
     $layout = $this->getLayout();
     $ddcaccountsModel = new DdcbalanceitModelsDdcaccounts();
+    $ddcgoalsModel = new DdcbalanceitModelsDdcgoals();
  
     switch($layout) {
 
      	case "default":
      		default:
      		$this->items = $ddcaccountsModel->listItems();
+     		$this->goals = $ddcgoalsModel->listItems();
     	break;
     	
     }

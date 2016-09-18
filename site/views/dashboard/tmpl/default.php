@@ -1,5 +1,8 @@
 <?php
 defined( '_JEXEC' ) or die( 'Restricted access' );
+$blnce = null;
+$target = null;
+$ddcgoalsModel = new DdcbalanceitModelsDdcgoals();
 $user = JFactory::getUser();
 foreach( $this->items as $item ):
 	$blnce += $item->balance;
@@ -7,11 +10,36 @@ foreach( $this->items as $item ):
 endforeach;
 
 ?>
+<div class="row-fluid">
+	<div class="col-xs-12">
+	<table class="table">
+		<thead>
+			<tr>
+				<td colspan="3">
+					<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcprofile'); ?>" class="btn btn-default"><?php echo JText::_('COM_DDC_VIEW_PROFILE'); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcgoals&layout=add'); ?>" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> <?php echo JText::_('COM_DDC_GOAL'); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcaccounts&layout=add'); ?>" class="pull-right btn btn-success"><i class="glyphicon glyphicon-plus"></i> <?php echo JText::_('COM_DDC_ACCOUNT'); ?></a>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($this->goals as $goal):?>
+			<?php $late = $ddcgoalsModel->isLate($goal->target_date,$goal->end_date)?>
+			<tr>
+				<td><a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcgoals&layout=default&ddcgoal_id='.$goal->ddc_goal_id) ?>" class="goal-title"><?php echo $goal->title; ?></span><br>
+				<span class="goal-subtitle"><?php echo $goal->motivation; ?></a></td>
+				<td><?php JHtml::date($goal->target_date,"dd MMM YYYY"); ?></td>
+				<td class="goal-date"><span class="<?php echo $late; ?>"><?php echo JHtml::date($goal->target_date,"d M Y"); ?></span></td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	</div>
+	<div class="clearfix"></div>
+</div>
 
 <div class="row-fluid">
-	<div class="span12">
-		<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcprofile'); ?>" class="btn"><i class="icon-plus"></i> <?php echo JText::_('COM_DDC_VIEW_PROFILE'); ?></a>
-		<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&view=ddcaccounts&layout=add'); ?>" class="pull-right btn"><i class="icon-plus"></i> <?php echo JText::_('COM_DDC_ADD_ACCOUNT'); ?></a>
+	<div class="col-xs-12">
 	<table class="table">
 		<thead>
 			<tr>

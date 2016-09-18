@@ -14,14 +14,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			<tr>
 				<td><?php echo $this->item->ddcbi_account_id; ?></td>
 				<td><?php echo $this->item->account_name;  ?></td>
-				<td><?php echo $this->item->at;  ?></td>
+				<td><?php echo $this->item->acc_type_title;  ?></td>
 			</tr>
 		</tbody>
 	</table>
 <form method="post" action="<?php echo JRoute::_('index.php?option=com_ddcbalanceit&controller=add'); ?>">
 <?php echo "<h3>".JText::_('COM_DDC_BALANCE')."</h3>";?>
 	<div class=row-fluid">
-	<div class="span4">
+	<div class="col-xs-4">
 	<?php foreach($this->form->getFieldset("default_date") as $field): ?>
 		<?php if ($field->hidden):// If the field is hidden, just display the input.?>
 			<?php echo $field->input;?>
@@ -40,7 +40,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		<?php endif;?>
 	<?php endforeach; ?>
 	</div>
-	<div class="span2">
+	<div class="col-xs-2">
 		<div class="control-group" style="text-align:center;">
 			<div class="control-label">
 				<label id="jform_balance_dr-lbl" for="jform_balance_dr"><?php echo JText::_('COM_DDC_DEBIT'); ?></label>
@@ -50,7 +50,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			</div>
 		</div>
 	</div>
-	<div class="span2">
+	<div class="col-xs-2">
 		<div class="control-group" style="text-align:center;">
 			<div class="control-label">
 				<label id="jform_balance_cr-lbl" for="jform_balance_cr"><?php echo JText::_('COM_DDC_CREDIT'); ?></label>
@@ -67,7 +67,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		<?php if ($field->hidden):// If the field is hidden, just display the input.?>
 			<div><?php echo $field->input;?></div>
 		<?php else:?>
-			<div class="span2">
+			<div class="col-xs-2">
 			<div class="control-group" style="text-align:center;">
 				<div class="control-label">
 					<?php echo $field->label; ?>

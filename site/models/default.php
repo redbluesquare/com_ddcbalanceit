@@ -42,7 +42,6 @@ class DdcbalanceitModelsDefault extends JModelBase
   	{
   		return false;
   	}
-  
   	$row->modified = $date;
   	if ( !$row->created )
   	{
@@ -53,7 +52,18 @@ class DdcbalanceitModelsDefault extends JModelBase
   			$row->alias = JFilterOutput::stringURLSafe($data['account_name']);
   		}
   	}
-  	if($this->data['table']=='ddcaccount_types'){
+  	if($data['table']=='ddcgoals'){
+  		if($data['alias'] == null){
+  			$row->alias = JFilterOutput::stringURLSafe($data['title']);
+  		}
+  		$row->target_date = JHtml::date($data['target_date'],"Y-m-d");
+  		if($data['end_date']!=null)
+  		{
+  			$row->end_date = JHtml::date($data['end_date'],"Y-m-d");
+  		}
+  		
+  	}
+  	if($data['table']=='ddcaccount_types'){
   		if($data['alias']==null){
   			$row->alias = JFilterOutput::stringURLSafe($data['account_type']);
   		}

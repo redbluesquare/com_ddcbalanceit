@@ -128,9 +128,10 @@ function updateBalance(balance){
 				jQuery("#jform_ddcbi_balance_id").val(data.html.ddcbi_balance_id);
 				jQuery("#jform_ddcbi_account_id").val(data.html.an);
 				if(data.html.balance < 0){jQuery("#jform_plus_minus").val(0);}
-				if((data.html.balance < 0)){jQuery("#jform_debit_credit").val("cr");}
+				if((data.html.balance < 0)){jQuery("#jform_debit_credit").val("cr");jQuery("#jform_plus_minus").val("1");}
 				jQuery("#jform_account_nature").val(data.html.account_nature);
 				jQuery(".deletebtn").show();
+				console.log(data);
 			}else{
 
 			}

@@ -9,7 +9,7 @@ class DdcbalanceitHelpersStyle
 		$document = JFactory::getDocument();
 
 		//stylesheets
-		//$document->addStylesheet(JURI::base().'components/com_ddcbalanceit/assets/css/style.css');
+		$document->addStylesheet(JURI::base().'components/com_ddcbalanceit/assets/css/style.css');
 		$document->addStyleSheet('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 		//javascripts

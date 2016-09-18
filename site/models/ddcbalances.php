@@ -70,7 +70,7 @@ class DdcbalanceitModelsDdcbalances extends DdcbalanceitModelsDefault
   {
   	if($this->_ddcbalance_id!=null)
   	{
-  		//$query->where('b.ddcbi_balance_id = "'.(int)$this->_ddcbalance_id.'"');
+  		$query->where('b.ddcbi_balance_id = "'.(int)$this->_ddcbalance_id.'"');
   	}
   	if($this->_published!=null)
   	{

@@ -4,7 +4,7 @@ $user = JFactory::getUser();
 ?>
 <div class="row-fluid">
 	<div class="span12">
-		<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit'); ?>"><i class="icon-arrow-left"></i><?php echo JText::_('COM_DDC_BACK_TO_ACCOUNTS'); ?></a>
+		<a href="<?php echo JRoute::_('index.php?option=com_ddcbalanceit'); ?>"><i class="icon-arrow-left"></i><?php echo JText::_('COM_DDC_BACK_TO_DASHBOARD'); ?></a>
 	</div>
 </div>
 <div class="row-fluid">
